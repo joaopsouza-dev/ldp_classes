@@ -20,10 +20,10 @@ int main () {
 	printf("\n===================================\n\n\n");
 	
 	printf("Digite o titulo do livro:\n");
-	scanf(" %s", &livro1.titulo);
+	scanf(" %[^\n]", &livro1.titulo);
 	
 	printf("\nDigite o nome do autor:\n");
-	scanf(" %s", &livro1.autor);
+	scanf(" %[^\n]", &livro1.autor);
 	
 	printf("\nDigite o ano de publicacao do livro:\n");
 	scanf("%d", &livro1.ano_pub);
