@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void incrementa (int *ponteiro) {
+void incrementa (int *ponteiro) { //ex 4
 	*ponteiro += 1;
 }
 
-void troca (char *a, char *b) {
+void troca (char *a, char *b) { //ex 5
 	
 	char trocar;
 	
@@ -15,11 +15,11 @@ void troca (char *a, char *b) {
 	
 }
 
-void dobrar(float *ptr) {
+void dobrar(float *ptr) { // ex 6
 	*ptr += *ptr;
 }
 
-void MaiorMenor(int *a, int *b, int *maior, int *menor) {
+void MaiorMenor(int *a, int *b, int *maior, int *menor) { //ex 7
 	
 	if(*a > *b) {
 		*maior = *a;
@@ -38,26 +38,58 @@ void MaiorMenor(int *a, int *b, int *maior, int *menor) {
 	
 }
 
-int soma(int *vetor[], int tamanho) {
+int soma(int *vetor, int *somar) { //ex 8
 		
 		int i;
-		int somar = 0;
 		
-		for(i=0;i<tamanho;i++) {
-			somar += *vetor++;
+		for(i=0;i<5;i++) {
+			*somar += *(vetor + i);
 		}
 		
-		return somar;
-	}
+		return *somar;
+}
+
+void copiar(int *orig, int *dest, int n) { //ex 10
 	
-int *maiorElemento(int *v, int n) {
+	int i;
+		
+		for(i=0;i<n;i++) {
+			*(dest + i) =  *(orig + i);
+		}
+}
+
+int contaCaracteres(const char *s) { //ex 11
+	
+	int ntotal = 0 ;
+	
+	 
+	while (*s != '\0'){
+		
+		ntotal++;
+		s++;
+	} 
+
+	return ntotal;
+}
+
+void ex12(char *s) { //ex 12
+	
+	int i;
+		
+		for(i=0;i<34;i++) {
+			printf("o caractere %c esta na posicao %d\n", *(s + i),i);
+		}
+}
+
+int comparar(const char *a, const char *b) { //ex 13
+	
+	
 	
 }
 
-
-int main () {
+int main () { ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	// EXERCÍCIO 1
+	// EXERCICIO 1
 	
 	int idade = 18;
 	char letra = 'j';
@@ -72,7 +104,7 @@ int main () {
 	printf("variavel char: %p\n\n", ptr2);
 	printf("variavel float: %p", ptr3);
 	
-	// EXERCÍCIO 2
+	// EXERCICIO 2
 	
 	printf("\n\n\nEXERCICIO 2\n\n");
 	
@@ -146,16 +178,53 @@ int main () {
 	
 	int vetor_soma[5] = {10, 20, 30, 40, 50};
 	int total;
+	int *ptr_soma = vetor_soma;
 	
-	total = soma(vetor_soma, 5);
+	soma(ptr_soma, &total);
 	printf("o valor total da soma e: %d", total);
 	
 	// EXERCICIO 9
 	
-	printf("\n\n\nEXERCICIO 9\n\n");
+	printf("\n\n\nEXERCICIO 9 PODEMOS PULAR\n\n");
 	
+	// EXERCICIO 10
 	
+	printf("\n\n\nEXERCICIO 10\n\n");
 	
+	char origem[9] = "Guilherme";
+	char destino[9];
+	
+	copiar(origem, destino, 9);
+	printf("o resultado e: ");
+	
+	for(i=0;i<9;i++) {
+			printf("%c", destino[i]);
+	}
+		
+	// EXERCICIO 11
+	
+	printf("\n\n\nEXERCICIO 11\n\n");
+	
+	char frase[] = "To com muita fome mlk";
+
+	contaCaracteres(&frase);
+	
+	printf("resultado: %d", contaCaracteres(frase));
+	
+	// EXERCICIO 12
+	
+	printf("\n\n\nEXERCICIO 12\n\n");
+	
+	char frase2[100] = "nao_consigo_criar_nome_de_variavel";
+	
+	ex12(&frase2);
+	
+	// EXERCICIO 13
+	
+	printf("\n\n\nEXERCICIO 13\n\n");
+	
+	char acabapfv[4] = "amor";
+	char insuportavel[4] = "anom";
 	
 	
 	
