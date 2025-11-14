@@ -34,11 +34,30 @@ void MaiorMenor(int *a, int *b, int *maior, int *menor) {
 	
 	printf("maior: %d", *maior);
 	printf("\nmenor: %d", *menor);
+	
+	
 }
+
+int soma(int *vetor[], int tamanho) {
+		
+		int i;
+		int somar = 0;
+		
+		for(i=0;i<tamanho;i++) {
+			somar += *vetor++;
+		}
+		
+		return somar;
+	}
+	
+int *maiorElemento(int *v, int n) {
+	
+}
+
 
 int main () {
 	
-	// EXERCÍCIO 1
+	// EXERCÃCIO 1
 	
 	int idade = 18;
 	char letra = 'j';
@@ -53,7 +72,7 @@ int main () {
 	printf("variavel char: %p\n\n", ptr2);
 	printf("variavel float: %p", ptr3);
 	
-	// EXERCÍCIO 2
+	// EXERCÃCIO 2
 	
 	printf("\n\n\nEXERCICIO 2\n\n");
 	
@@ -124,6 +143,18 @@ int main () {
 	// EXERCICIO 8
 	
 	printf("\n\n\nEXERCICIO 8\n\n");
+	
+	int vetor_soma[5] = {10, 20, 30, 40, 50};
+	int total;
+	
+	total = soma(vetor_soma, 5);
+	printf("o valor total da soma e: %d", total);
+	
+	// EXERCICIO 9
+	
+	printf("\n\n\nEXERCICIO 9\n\n");
+	
+	
 	
 	
 	
